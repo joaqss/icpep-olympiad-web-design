@@ -99,7 +99,6 @@ function Landing() {
               <div className="line">your</div>
               <div className="line">journey</div>
               <div className="line">starts here</div>
-              <div className="line line-small"> Scroll down to start </div>
             </div>           
           </div>
           <div className="panel panel-2"></div>

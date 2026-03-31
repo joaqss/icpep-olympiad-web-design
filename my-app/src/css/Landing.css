@@ -2,7 +2,7 @@
 /* TUTORIAL FROM: https://www.youtube.com/watch?v=OeaHnxahf40 */
 .wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
