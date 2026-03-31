@@ -81,7 +81,7 @@ function SkewTransition() {
                 pin: true,
                 pinSpacing: true,
                 scrub: 1,
-                markers: true,
+                // markers: true,
             }
         });
 
