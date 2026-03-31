@@ -2,8 +2,9 @@
 /* TUTORIAL FROM: https://www.youtube.com/watch?v=OeaHnxahf40 */
 .wrapper {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   overflow: hidden;
+  margin: 0;
 }
 
 .horizontal {
@@ -65,7 +66,7 @@
 }
 
 .landing-title {
-    font-size: 3rem;
+    font-size: clamp(3rem, 5vw, 6rem);
     font-weight: bold;
     color: black;
     width: 30%;
