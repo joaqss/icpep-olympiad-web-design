@@ -142,7 +142,7 @@ function Projects() {
 
    return (
     <div ref={mainRef} className="museum-wrapper">
-        <section className="museum-section" ref={trackRef}>
+        <section className="museum-section" ref={trackRef} id="projects">
             <div className="museum-track" >
                 {items.map((item, index) => (
                     <div

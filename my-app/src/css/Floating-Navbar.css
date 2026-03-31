@@ -38,3 +38,11 @@
   transform: translate(-50%, -30px);
   pointer-events: none;
 }
+
+.navbar-button {
+  background: none;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}

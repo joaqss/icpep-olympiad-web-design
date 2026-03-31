@@ -88,7 +88,7 @@ function TheEnd() {
     return (
         <>
         <div ref={containerRef}>
-            <div className="final-sequence-wrapper">
+            <div className="final-sequence-wrapper" id="epilogue">
                 <div className="svg-background">
                     
                     <svg width="1896" height="2246" viewBox="0 0 1896 2246" fill="none" xmlns="http://www.w3.org/2000/svg">

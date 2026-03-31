@@ -172,7 +172,7 @@ function SkewTransition() {
     return(
         <> 
             {/* 1. THE PINNED GSAP CONTAINER */}
-            <div className="main-container" ref={mainRef}>
+            <div className="main-container" ref={mainRef} id="careers">
                 <div className="wrapper">
                     {careersData.map((item, index) => (
                         <section key={item.id} className={`software-section slide-${index}`}>

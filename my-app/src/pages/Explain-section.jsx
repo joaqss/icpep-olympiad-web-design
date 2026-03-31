@@ -176,7 +176,7 @@ function Explaination() {
         <>
         <div ref={mainRef}>
             <div className="header-explain-container">
-                <section className="header-container">
+                <section className="header-container" id='home'>
                     <div className="keyboard-layer">
                         <div className="tagline">
                             <div className="tagline-line">From a single line of code</div>

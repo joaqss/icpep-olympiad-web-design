@@ -18,7 +18,7 @@ function KeyboardPage2() {
             pin: true,
             pinSpacing: true,   // Keeps the next section pushed down
             scrub: 1,           // Smoothly links the animation to the scrollbar
-            markers: true,      // Keep on to see the red 'end' marker 2000px down the page
+            // markers: true,      // Keep on to see the red 'end' marker 2000px down the page
         }
     });
     
