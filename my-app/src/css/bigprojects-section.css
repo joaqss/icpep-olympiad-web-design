@@ -1,0 +1,123 @@
+.bigprojects-section {
+    background-color: #1B1121;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 0 50px;
+}
+
+.projects-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 600px; /* Adjust height as needed */
+    gap: 20px;
+}
+
+.project-card {
+    position: relative;
+    flex: 1; 
+    min-width: 80px; /* Base width when shrunken */
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* CLICK LOGIC: The card with the .active class expands */
+.project-card.active {
+    flex: 5;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.4); /* Darker when closed */
+    transition: all 0.7s ease;
+}
+
+.project-card.active .project-img {
+    filter: brightness(1);
+    transform: scale(1.05); /* Slight zoom on the active image */
+}
+
+.project-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(27, 17, 33, 0.9), transparent);
+    color: white;
+    text-align: left;
+    white-space: normal;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.2s ease;
+}
+
+/* Show info ONLY when card is active */
+.project-card.active .project-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* Wait for expansion to finish before showing text */
+}
+
+.project-description {
+    max-width: 90%; /* Keeps text from hugging the right edge too tightly */
+    line-height: 1.4;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.project-card:not(.active):hover .project-img {
+    filter: brightness(0.6);
+    transition-delay: 0.2s;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    .bigprojects-section {
+        padding: 50px 20px; /* Give more breathing room on the sides */
+        height: auto; /* Let the section grow with its content */
+    }
+
+    .projects-wrapper {
+        flex-direction: column; /* Stack cards vertically */
+        height: 80vh; /* Give the total wrapper a set height for the flex to work */
+        gap: 15px;
+    }
+
+    .project-card {
+        width: 100%; /* Take full width */
+        flex: 1; /* Default height share */
+        min-width: unset; /* Remove the horizontal min-width */
+        min-height: 80px; /* Ensure cards don't disappear when squashed vertically */
+    }
+
+    .project-card:hover {
+        flex: 4; /* Grows taller vertically on touch/hover */
+    }
+
+    .project-info {
+        padding: 20px; /* Smaller padding for small screens */
+        white-space: normal; /* Allow text to wrap on mobile so it's readable */
+    }
+
+    .project-title {
+        font-size: 1.5rem; /* Shrink title slightly for mobile */
+    }
+}

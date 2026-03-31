@@ -1,0 +1,97 @@
+
+/* TUTORIAL FROM: https://www.youtube.com/watch?v=OeaHnxahf40 */
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizontal {
+  width: 100vh;
+  height: 100vw;
+  margin: 0;
+  padding: 0;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left; 
+  overflow-x: visible;
+  overflow-y: scroll;
+  position: sticky; 
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.panels {
+    display: flex;
+    flex-direction: row;
+    width: 200vw;
+    height: 100vh;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    gap: 0;
+}
+
+.panel {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+/* .panel-2 {
+  background-color: green;
+} */
+
+.panel-last {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: visible;
+  padding-bottom: 300px;
+
+}
+
+.green { background: green; }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.landing-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    width: 30%;
+    height: 100%;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 6rem;
+    line-height: 1.2;
+    font-size: 4.5rem;
+    justify-content: center;
+}
+
+.line-small {
+  font-size: 0.9rem;
+  font-weight:300;
+  margin-top: 10px;
+
+}
+
+.landing-svg {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+  transform: rotate(90deg) translateX(1600px) translateY(250px) scale(6);
+  
+}

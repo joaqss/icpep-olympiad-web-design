@@ -1,0 +1,230 @@
+:root {
+    --bg-start: #1B1121; /* Or your starting color */
+    --bg-end: #1B1121;
+    --gradient-rotation: 180deg;
+    --grad-left-solid: rgba(255, 0, 85, 1);
+    --grad-left-fade: rgba(66, 145, 255, 0);
+    --grad-right-solid: rgba(79, 255, 66, 1);
+    --grad-right-fade: rgba(159, 74, 172, 0);
+}
+
+.hard-software-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent gradient glow from causing scrollbars */
+
+    /* Starting state for GSAP */
+    --grad-left-solid: rgba(255, 0, 85, 0);
+    --grad-right-solid: rgba(66, 145, 255, 0);
+
+    background: 
+        radial-gradient(circle at 10% 50%, var(--grad-left-solid) 0%, transparent 60%),
+        radial-gradient(circle at 90% 50%, var(--grad-right-solid) 0%, transparent 60%),
+        #1B1121;
+}
+
+.item-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 20; /* High enough to be over gradients/ampersand */
+    display: flex;
+    justify-content: center;
+    background-color: transparent; /* Essential so gradients show through */
+    pointer-events: none; /* Allows user to click things behind it if needed */
+}
+
+
+/* 2. The Wrapper (Relative positioning is crucial here!) */
+.item-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem; 
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between; 
+    
+    /* THIS IS CRITICAL: It traps the absolute ampersand inside this box */
+    position: relative; 
+    z-index: 10;;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    z-index: 30;
+    pointer-events: auto; /* Re-enable interaction for buttons/links in text blocks */
+}
+
+.hs-title {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 10px 0;
+    line-height: 1;
+
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.2), 
+        0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hs-subtext {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.85); /* Slightly transparent white for hierarchy */
+    margin: 0;
+
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 4. The Staggering Effect */
+.hardware-block {
+    margin-bottom: 200px; /* Pushes Hardware UP */
+}
+
+.software-block {
+    margin-top: 200px; /* Pushes Software DOWN */
+}
+
+/* 5. The Giant Ampersand */
+/* 5. The Giant Ampersand */
+.ampersand-wrapper {
+    position: absolute;
+    left: 58%; /* <--- INCREASE THIS: 55% to 60% will push it nicely to the right */
+    top: 50%;
+    transform: translate(-50%, -50%); /* Keeps it anchored by its own center */
+    z-index: 0; 
+    pointer-events: none; 
+    
+    height: 85vh; 
+    width: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Let the SVG fill the wrapper beautifully */
+.ampersand-path {
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+    
+    /* ADD THIS LINE */
+    opacity: 0.3; /* This makes it 30% visible */
+}
+/* Mobile Responsiveness */
+
+/* 1 - Narrative Section */
+/* 1. The Full-Screen Section */
+.narrative1-section {
+    color: #fff;
+    background-color: #1B1121; 
+    
+    /* Add these to center everything in the viewport */
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;      /* Vertically centers the text */
+    justify-content: center;  /* Horizontally centers the wrapper */
+    position: relative;
+    overflow: hidden;         /* Good practice for when you add that curvy background line! */
+}
+
+/* 2. The Text Wrapper */
+.narrative-item-wrapper {
+    width: 100%;
+    /* Change 80vw to a fixed pixel width. This forces the text to wrap EXACTLY like your Figma design */
+    max-width: 1300px; 
+    padding: 0 2rem;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    z-index: 10; /* Keeps text above any background elements you add later */
+}
+
+/* 3. The Typography */
+.narrative1-title {
+    /* clamp() makes it massive on desktop (4.5rem) but shrinks it gracefully on mobile (2.5rem) */
+    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-weight: 800;
+    
+    /* Decrease line-height from 1.5 to 1.2. Figma headings are usually tight! */
+    line-height: 1.2; 
+    margin: 0;
+    text-align: left; 
+}
+
+.narrative1-title, .narrative2-title {
+    /* Large ambient glow to make the high-contrast text feel more integrated */
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Narrative 2 Styles */
+/* 1. The Full-Screen Section */
+.narrative2-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1121; /* Matches the deep dark purple/black from the image */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 2. The Typography */
+.narrative2-title {
+    /* Using clamp makes it massive on desktop but shrinks perfectly for mobile */
+    font-size: clamp(3rem, 6vw, 5.5rem); 
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    text-align: left; 
+}
+
+/* 3. The Orange Highlight */
+.highlight-orange {
+    /* Using a linear gradient clipped to the text gives it that premium modern look */
+    background: linear-gradient(90deg, #FFB347 0%, #FF7B00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+.hardware-title {
+    text-shadow: 
+        0 0 25px rgba(255, 0, 85, 0.3), 
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.software-title {
+    text-shadow: 
+        0 0 25px rgba(66, 145, 255, 0.3), 
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 900px) {
+    .item-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5rem;
+    }
+    .hardware-block, .software-block {
+        margin: 0; /* Remove staggering on small screens */
+        text-align: center;
+    }
+    .giant-ampersand {
+        font-size: 15rem; /* Shrink the & on mobile */
+    }
+}

@@ -1,0 +1,108 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* This is fine here, as it only clips the videos */
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 1. Each section is a full-screen card stacked absolutely */
+.software-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents zoomed images from spilling out */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10vh;
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #1B1121;
+}
+
+/* 3. Layer 2: Text (Sits behind the solid frame, but visible through the hole) */
+.text-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+/* 4. Layer 3: Frame (Sits on the very top) */
+.frame-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 0;
+    font-size: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; 
+    pointer-events: none;
+}
+
+.frame-img {
+  display: block;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+/* 1. The Main Section */
+.careers-last-section {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1B1121;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack badge above text */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 10%; /* Prevents text from hitting screen edges */
+}
+
+.careers-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the badge and text block horizontally */
+    max-width: 1200px;    /* Matches the Figma bounding box better */
+}
+
+.projects-intro-text {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Scalable font size */
+    line-height: 1.2;
+    text-align: left; /* Design shows centered text */
+    font-weight: 700;   /* Extra bold */
+}
+
+.italic-text {
+    font-family: serif; /* Often used for that stylized italic look */
+    font-style: italic;
+    font-weight: 400;
+}
+
+.highlight-text {
+    color: #F28C28; /* The orange from your image */
+    font-family: serif; /* Change to your specific serif font if imported */
+    font-weight: 500;
+}
